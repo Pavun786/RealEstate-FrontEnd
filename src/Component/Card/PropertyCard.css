@@ -1,14 +1,15 @@
 .card-container{
     display: flex;
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
     padding: 60px;
+    background-color:rgb(161, 200, 235);
 }
 
 .card{
     padding: 20px;
-    background-color: aliceblue;
     text-align: left;
-
+    
 }
 
 .card-head{
