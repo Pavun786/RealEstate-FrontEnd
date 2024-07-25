@@ -34,8 +34,9 @@ function Login(){
       
            })
         const result = await data.json(); 
-         
-        if(data.status === 200){
+        console.log(result)
+        console.log(data) 
+        if(data.status == 200){
            
             console.log("Success",result);
             localStorage.setItem("token",result.token);
