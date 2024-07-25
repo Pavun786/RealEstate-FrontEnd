@@ -28,7 +28,7 @@ import { API } from './Global';
         validationSchema:RegisterValidationSchema,
 
        onSubmit:async (values)=>{
-        console.log(values)
+       
        
          try{
 

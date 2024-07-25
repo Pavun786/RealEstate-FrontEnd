@@ -36,7 +36,7 @@ const propertyValidationSchema = yup.object({
         setData(res)  
     }
 
-    console.log(data)
+  
  
   return(
     <div>

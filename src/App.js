@@ -8,13 +8,14 @@ import EditProperty from './Component/EditProperty/EditProperty';
 import Register from './Register';
 import Login from './Login';
 import ProtectedRoute from './ProtectedRoute';
+import Carousel from './Carousel';
 
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      
+       
       <Routes>
         <Route path='/home' element={
           <ProtectedRoute>

@@ -32,7 +32,7 @@ function AddProperty(){
     validationSchema:propertyValidationSchema,
     
     onSubmit:(newData)=>{
-       console.log(newData)
+      
        addProperty(newData);
      }
   
@@ -49,7 +49,7 @@ function AddProperty(){
           }
     })
      const res = await data.json()
-     console.log(res)
+     
      navigate('/home')
     
   } 

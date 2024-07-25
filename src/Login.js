@@ -26,7 +26,7 @@ function Login(){
         validationSchema:LoginValidationSchema,
 
        onSubmit:async (values)=>{
-        console.log(values)
+       
       const data = await fetch(`${API}/user/login`,{
             method:"POST",
             body:JSON.stringify(values),
@@ -34,11 +34,10 @@ function Login(){
       
            })
         const result = await data.json(); 
-        console.log(result)
-        console.log(data) 
+        
         if(data.status == 200){
            
-            console.log("Success",result);
+            
             localStorage.setItem("token",result.token);
             localStorage.setItem("user",result.data.userName)
             alert(result.message)

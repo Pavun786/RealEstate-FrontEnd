@@ -8,6 +8,9 @@ import {useState,useEffect} from "react"
 import "../Card/PropertyCard.css"
 import { useNavigate } from 'react-router-dom';
 import { API } from '../../Global';
+import img1 from "../../../src/assets/banner.webp"
+
+import Carousel from '../../Carousel';
 
   function PropertyCard(){
 
@@ -33,8 +36,7 @@ import { API } from '../../Global';
       setData(res)
   }
 
-   console.log(data)
-
+   
    const deleteFunction = async(id)=>{
       
     try{
@@ -57,9 +59,15 @@ import { API } from '../../Global';
   }
    
   return(
-        <div className='card-container'>
 
-    { data && data.map((ele,index)=>{
+        <>
+         <div> 
+        <img  className="banner" src={img1}/>
+         </div>
+        
+        <div className='card-container'>
+        
+          { data && data.map((ele,index)=>{
               return(
                 <Card sx={{ maxWidth: 345 }} className='card'>
     
@@ -88,6 +96,7 @@ import { API } from '../../Global';
            })}
            
         </div>
+        </>
     )
 
   }
