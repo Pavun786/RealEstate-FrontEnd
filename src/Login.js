@@ -35,11 +35,7 @@ function Login(){
            })
         const result = await data.json(); 
          
-          if (data.status === 500) {
-           
-            alert("UnAuthorized ❌❌")
-          }
-           else {
+        if(data.status === 200){
            
             console.log("Success",result);
             localStorage.setItem("token",result.token);
@@ -47,7 +43,10 @@ function Login(){
             alert(result.message)
             navigate("/home");
            
-         }
+         }else {
+           
+            alert(result.message)
+          }
          
     }
     });
