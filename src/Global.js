@@ -1,0 +1,1 @@
+export const API = "https://real-estate-backend-pink.vercel.app"
