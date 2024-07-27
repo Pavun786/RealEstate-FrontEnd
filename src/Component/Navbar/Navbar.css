@@ -6,15 +6,18 @@ nav{
     background-color:rgb(86, 100, 86);
     color: white;
     display: flex;
-    padding: 20px;
+    padding: 15px;
     font-family: 'Times New Roman', Times, serif;
     justify-content: space-around;
     align-items: center;
+    font-weight: 800;
+   
 }
 
 nav ul{
     display: flex;
     list-style: none;
+    align-items: center;
     /* font-size: larger; */
    
 }

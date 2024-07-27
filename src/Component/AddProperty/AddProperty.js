@@ -40,17 +40,26 @@ function AddProperty(){
 
    const addProperty = async(newData) => { 
      
-     const data = await fetch(`${API}/property/create`,{
-           method:"POST",
-           body:JSON.stringify(newData),
-           headers:{
-            "Content-Type": "application/json",
-            "Auth": localStorage.getItem("token")
-          }
-    })
-     const res = await data.json()
-     
-     navigate('/home')
+     try{
+      const data = await fetch(`${API}/property/create`,{
+        method:"POST",
+        body:JSON.stringify(newData),
+        headers:{
+         "Content-Type": "application/json",
+         "Auth": localStorage.getItem("token")
+       }
+     })
+      const res = await data.json()
+      if(data.status == 200){
+       alert(res.message)
+       navigate('/home')
+      } else if(data.status == 403){
+       alert(res.message)
+     }
+ 
+     } catch(err){
+        alert(err.message)
+     }
     
   } 
     

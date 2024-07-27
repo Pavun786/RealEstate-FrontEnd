@@ -35,36 +35,37 @@ import { API } from "./Global";
     //   }
     return(
         <div className='search-container'>
-        
-        { values.results && values.results.map((ele,index)=>{
-            return(
-              <Card sx={{ maxWidth: 345 }} className='card'>
-  
-              <CardContent>
-                <div className='card-head'>
-                <Typography gutterBottom variant="h5" component="div">
-                  {ele.propertyType}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                 Rs.{ele.price}
-                </Typography>
-                </div>
-                <Typography variant="body2" color="text.secondary" className='location'>
-                 {ele.location}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                 {ele.description}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                {/* <Button size="small" onClick={()=> navigate(`/edit/${ele._id}`)}>Edit</Button>
-                <Button size="small" onClick={()=> deleteFunction(ele._id)}>Delete</Button> */}
-              </CardActions>
-                  </Card>
-            )
-         })}
-         
-      </div>
+        { values.results && values.results.length > 0 ? 
+            values.results.map((ele, index) => {
+                return (
+                    <Card sx={{ maxWidth: 345 }} className='card' key={index}>
+                        <CardContent>
+                            <div className='card-head'>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    {ele.propertyType}
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    Rs.{ele.price}
+                                </Typography>
+                            </div>
+                            <Typography variant="body2" color="text.secondary" className='location'>
+                                {ele.location}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                {ele.description}
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            {/* <Button size="small" onClick={()=> navigate(`/edit/${ele._id}`)}>Edit</Button>
+                            <Button size="small" onClick={()=> deleteFunction(ele._id)}>Delete</Button> */}
+                        </CardActions>
+                    </Card>
+                );
+            }) 
+            : <div className="msg">"No Property Found..!" </div>
+        }
+    </div>
+    
     )
  }
  export default SearchData;

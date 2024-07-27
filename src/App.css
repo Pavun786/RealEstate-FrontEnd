@@ -20,6 +20,11 @@
   margin: 50px;
 }
 
+.msg{
+  text-align: center;
+  font-size: 25px;
+  color: red;
+}
 
 @media screen and (max-width : 520px){
   .register-container{
