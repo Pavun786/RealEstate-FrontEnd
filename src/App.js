@@ -9,6 +9,7 @@ import Register from './Register';
 import Login from './Login';
 import ProtectedRoute from './ProtectedRoute';
 import Carousel from './Carousel';
+import SearchData from './SearchData';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="/edit/:id" element={<EditProperty />} />
         <Route path='/register' element={<Register />} />
         <Route path='/' element={<Login />} />
+        <Route path='/search' element={<SearchData/>}/>
       </Routes>
     </div>
   );

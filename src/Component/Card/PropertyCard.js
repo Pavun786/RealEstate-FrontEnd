@@ -4,7 +4,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import {useState,useEffect} from "react"
+import {useState,useEffect,useContext} from "react"
 import "../Card/PropertyCard.css"
 import { useNavigate } from 'react-router-dom';
 import { API } from '../../Global';
@@ -12,11 +12,14 @@ import img1 from "../../../src/assets/banner.webp"
 
 import Carousel from '../../Carousel';
 
-  function PropertyCard(){
+
+  function PropertyCard({children}){
 
     const [data,setData] = useState("")
     const navigate = useNavigate()
  
+   
+   
 
   useEffect(()=>{
       getDatas()

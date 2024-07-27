@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "../Navbar/Navbar.css"
 import MenuIcon from '@mui/icons-material/Menu';
 import {Link, useNavigate} from "react-router-dom"
+import SearchInput from "../../SearchInput.js"
 
-function Navbar (){
+function Navbar ({children}){
 
   const [show,setShow] = useState(true)
   const token = localStorage.getItem("token")
   const user = localStorage.getItem("user")
   const navigate = useNavigate()
 
+  
   const handleChage = () =>{
       setShow(!show)
       console.log("clicked")
@@ -21,6 +23,7 @@ function Navbar (){
   }
 
 
+
     return(
         <nav>
          <div className="logo">
@@ -28,7 +31,9 @@ function Navbar (){
          </div>
         <ul className={show ? "showMenu" : ""}>
             
-            <li> <input placeholder="Search"></input></li>
+            <li> 
+           <SearchInput/>
+            </li>
             <li><Link to="/addnew">AddProperty</Link></li>
             <li><Link to="/home">GetAll</Link></li>
             

@@ -16,6 +16,9 @@
 
 }
 
+.search-container{
+  margin: 50px;
+}
 
 
 @media screen and (max-width : 520px){
