@@ -7,12 +7,13 @@ import { API } from "./Global";
 function SearchInput(){
   const [values, setValues] = useSearch();
   const navigate = useNavigate();
+  const userId = localStorage.getItem("userId")
 
   const handleSubmit = async (e) => {
     e.preventDefault();
    
      try{
-        const data = await fetch(`${API}/property/${values.keyword}`,{
+        const data = await fetch(`${API}/property/search/${values.keyword}/${userId}`,{
             method : "GET",
             headers:{
                "Auth": localStorage.getItem("token")

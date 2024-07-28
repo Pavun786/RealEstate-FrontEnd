@@ -32,7 +32,7 @@ function AddProperty(){
     validationSchema:propertyValidationSchema,
     
     onSubmit:(newData)=>{
-      
+       newData.userId = localStorage.getItem("userId") 
        addProperty(newData);
      }
   

@@ -40,6 +40,7 @@ function Login(){
             
             localStorage.setItem("token",result.token);
             localStorage.setItem("user",result.data.userName)
+            localStorage.setItem("userId",result.data._id)
             alert(result.message)
             navigate("/home");
            
@@ -77,6 +78,11 @@ function Login(){
             helperText={formik.touched.password && formik.errors.password ? formik.errors.password : null}/>
           <Button type="submit" variant="contained">submit</Button>
           <p>If you don't have an account <Link to="/register" className='link'>Click-Here</Link></p>
+          <div>
+            <p>For login as guest :</p>
+            <h6>Email    : user2@gmail.com</h6>
+            <h6>Password : password</h6>
+          </div>
           </form>
         </div>
     )
